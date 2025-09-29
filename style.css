@@ -1,0 +1,304 @@
+/* ======================================================
+   VARIABLES GLOBALES
+   Définition des couleurs, polices, tailles, etc.
+   Ces variables facilitent toute la personnalisation future.
+====================================================== */
+:root {
+  --primary: #1db954;       /* Vert principal : titres, boutons, encadrements */
+  --primary-light: #4ade80; /* Vert clair : effets hover */
+  --background: #0a1a2f;    /* Bleu sombre : fond global */
+  --text-light: #f1f5f9;    /* Texte principal (clair) */
+  --text-muted: #94a3b8;    /* Texte secondaire (gris clair) */
+  --card-bg: #132238;       /* Fond des blocs/sections */
+  --max-width: 1100px;      /* Largeur max du contenu */
+  --transition: 0.3s ease;  /* Durée/effet transitions */
+  --radius: 12px;           /* Rayon des coins arrondis */
+  --font-title: 'Poppins', sans-serif; /* Police titres */
+  --font-body: 'Roboto', sans-serif;   /* Police paragraphes */
+}
+
+/* ======================================================
+   RESET DE BASE
+   Supprime les marges/paddings par défaut et harmonise
+   l’affichage sur tous les navigateurs.
+====================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--background);
+  color: var(--text-light);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased; /* Améliore rendu texte */
+}
+
+/* Images générales */
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--radius);
+}
+
+/* Liens par défaut */
+a {
+  text-decoration: none;
+  color: var(--primary);
+  transition: all var(--transition);
+}
+a:hover {
+  color: var(--primary-light);
+}
+
+/* Titres */
+h1, h2, h3 {
+  font-family: var(--font-title);
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Paragraphes → justifiés et bien structurés */
+p {
+  text-align: justify;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+/* ======================================================
+   HEADER
+   Contient le logo, le nom de l’association et le slogan.
+====================================================== */
+header {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 2px solid var(--primary);
+}
+
+/* Logo encadré en vert + ombre */
+header img {
+  margin: 0 auto 1rem;
+  border: 3px solid var(--primary);  /* Encadrement vert */
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5); /* Ombre douce */
+}
+
+/* Titre principal de l’association */
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Slogan ou phrase d’accroche */
+header p {
+  font-style: italic;
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+/* ======================================================
+   NAVIGATION (liens internes & externes)
+   - Liens encadrés individuellement
+   - Organisation claire et moderne
+====================================================== */
+nav {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem; /* Espacement entre liens */
+}
+
+nav a {
+  padding: 0.6rem 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: 2px solid var(--primary);  /* Encadrement vert */
+  border-radius: var(--radius);
+  background: var(--background);
+  transition: all var(--transition);
+}
+
+nav a:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ======================================================
+   CONTENU PRINCIPAL
+   Sections générales de la page (activités, infos, etc.)
+====================================================== */
+main {
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Ombre légère pour relief */
+}
+
+section h2 {
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--primary); /* Ligne verticale verte */
+  padding-left: 0.6rem;
+}
+
+/* ======================================================
+   ACCUEIL
+   Mise en page du slogan "La logistique au service de la logistique"
+   - Centré horizontalement
+   - Taille adaptée et lisible
+====================================================== */
+#accueil {
+  display: flex;
+  justify-content: center;   /* Centre horizontalement */
+  align-items: center;       /* Centre verticalement si hauteur fixée */
+  min-height: 200px;         /* Hauteur minimum pour aérer la zone */
+  text-align: center;
+}
+
+#accueil h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* ======================================================
+   ACTIVITES
+   Organisation des liens internes
+   - Alignement clair grâce à Flexbox
+   - Espacement régulier et responsive
+====================================================== */
+#activites {
+  display: flex;
+  flex-direction: column;    /* Colonne par défaut sur mobile */
+  gap: 1.2rem;               /* Espace entre chaque lien */
+  padding: 1rem;
+}
+
+#activites a {
+  display: block;
+  text-align: center;
+  padding: 0.8rem 1.2rem;
+  border: 2px solid var(--primary);   /* Encadré vert */
+  border-radius: var(--radius);
+  background: var(--background);
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+#activites a:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px); /* Petit effet flottant au survol */
+}
+
+/* Grille sur tablette / desktop pour liens Activités */
+@media (min-width: 768px) {
+  #activites {
+    flex-direction: row;     /* Liens en ligne sur PC */
+    justify-content: center; /* Centré horizontalement */
+    flex-wrap: wrap;         /* Passe à la ligne si trop long */
+    gap: 1.5rem;
+  }
+  #activites a {
+    min-width: 180px;        /* Taille uniforme pour chaque encadré */
+  }
+}
+
+/* ======================================================
+   FORMULAIRE (ex: page contact)
+   - Mise en forme simple et moderne
+====================================================== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 500;
+}
+
+input, textarea {
+  padding: 0.8rem;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+}
+
+input[type="submit"] {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+input[type="submit"]:hover {
+  background: var(--primary-light);
+}
+
+/* ======================================================
+   MEMBRES
+   - Bloc encadré
+   - Photo stylisée avec effets hover
+====================================================== */
+.membre {
+  margin-bottom: 2rem;
+  background: var(--background);
+  padding: 1rem;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--primary);
+}
+
+h3 {
+text-align: center;
+}
+
+.membre img {
+  margin: 0 auto 1rem;
+  margin-bottom: 1rem;
+  border: 3px solid var(--primary);   /* Bordure verte */
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* Ombre douce */
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.membre img:hover {
+  transform: scale(1.03);  /* Zoom léger au survol */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+/* ======================================================
+   FOOTER
+   Pied de page sobre et lisible
+====================================================== */
+footer {
+  background: var(--card-bg);
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 2px solid var(--primary);
+  color: var(--text-muted);
+}
+
+/* ======================================================
+   RESPONSIVE DESIGN
+   Adaptation mobile/tablette
+====================================================== */
+@media (max-width: 768px) {
+  header h1 { font-size: 1.4rem; }
+  nav { flex-direction: column; align-items: center; }
+  nav a { width: 90%; text-align: center; }
+  section { padding: 1rem; }
+}
