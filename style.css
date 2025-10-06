@@ -110,7 +110,7 @@ nav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.8rem; /* Espacement entre liens */
+  gap: 1rem; /* Espacement entre liens */
 }
 
 nav a {
@@ -136,6 +136,16 @@ main {
   max-width: var(--max-width);
   margin: 2rem auto;
   padding: 0 1rem;
+}
+
+main img {
+   border: 2px solid var(--primary);
+}
+
+main h2{
+   margin-bottom: 1rem;
+  border-left: 4px solid var(--primary); /* Ligne verticale verte */
+  padding-left: 0.6rem;
 }
 
 section {
@@ -279,6 +289,15 @@ text-align: center;
   box-shadow: 0 6px 20px rgba(0,0,0,0.6);
 }
 
+.news img {
+   margin: 0 auto 1rem;
+  margin-bottom: 1rem;
+  border: 3px solid var(--primary);   /* Bordure verte */
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* Ombre douce */
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
 /* ======================================================
    FOOTER
    Pied de page sobre et lisible
@@ -302,3 +321,4 @@ footer {
   nav a { width: 90%; text-align: center; }
   section { padding: 1rem; }
 }
+
