@@ -7,20 +7,32 @@
         <meta name="keywords" content="Logistique, Insertion professionnelle, jeunes, Rufisque, emploi jeunes, Association Logistique, Transport, développement local, formation Logistique, valorisation Rufisque">
         <title>ARTL - contact</title>
         <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
     </head>
     
     <body>
-        <header>    
-            <img src="img/IMG_9481.jpg" alt="Logo ARTL" style="max-width: 150px; height: auto;">
-            <h1>Contactez - nous</h1>
-            <nav>     
-                    <a href="index.html">Accueil</a>
-                    <a href="mission.html">Mission et Objectif</a>
-                    <a href="activites.html">Nos activités</a>
-                    <a href="actualites.html">Actualités</a>
-                    <a href="membres.html">Membres</a>
-                    <a href="contact.html">contact</a>
-            </nav>
+       <header>
+       <nav class="navbar">
+
+         <div class="logo"><img src="img/IMG_9481.jpg" alt="Logo ARTL" style="max-width: 100px; height: auto;"></div>
+         <h1>Contactez - nous</h1>
+
+         <div class="menu-toggle" id="menu-toggle">
+           <span class="bar"></span>
+           <span class="bar"></span>
+           <span class="bar"></span>
+         </div>
+
+         <ul class="nav-links" id="nav-links">
+            <br><br>
+           <li><a href="index.html">Accueil</a></li>
+           <li><a href="mission.html">Mission et Objectif</a></li>
+           <li><a href="activites.html">Nos activités</a></li>
+           <li><a href="actualites.html">Actualités</a></li>
+           <li><a href="membres.html">Membres</a></li>
+           <li><a href="contact.html">contact</a></li>
+         </ul>
+        </nav>
         </header>
 
         <main>
@@ -35,21 +47,22 @@
             <section>
                 <h2>Nos canaux d'information</h2>
                 <ul>
-                    <li><a href=": https://www.linkedin.com/in/artlogistique-artl-337841321?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">LinkedIn</a></li>
-                    <li><a href=":  https://www.instagram.com/artlogistique?igsh=MWdicHRmdDlxZXE2cw==" target="_blank">Instagram</a></li>
-                    <li><a href=" https://chat.whatsapp.com/IiUHo0pDFYU9kEh0T1Kku9?mode=ems_share_t" target="_blank">WhatsApp</a></li>
-                    <li><a href="https://www.facebook.com/profile.php?id=61563721942508&mibextid=ZbWKwL" target="_blank">Facebook</a></li>
+                    <li><a href=": https://linkedin.com/in/artlogistique-artl-337841321" target="_blank"><img src="img/IMG_0051.jpg" alt="Logo linkdin" style="max-width: 50px; height: auto;"></a></li><br>
+                    <li><a href=":  https://www.instagram.com/artlogistique?igsh=emFyaDBzNXNvdmVI" target="_blank"><img src="img/IMG_0046.jpg" alt="Logo instagrame" style="max-width: 50px; height: auto;"></a></li><br>
+                    <li><a href=" https://chat.whatsapp.com/IiUHo0pDFYU9kEh0T1Kku9?mode=ems_share_t" target="_blank"><img src="img/IMG_0050.jpg" alt="Logo whatsapp" style="max-width: 50px; height: auto;"></a></li><br>
+                    <li><a href="https://www.facebook.com/profile.php?id=61563721942508&mibextid=ZbWKwL" target="_blank"><img src="img/IMG_0045.jpg" alt="Logo facebook" style="max-width: 50px; height: auto;"></a></li><br>
+                    <li><a href="https://www.tiktok.com/@artlogistique?_t=ZM-90P4a5tSTRT&_r=1" target="_blank"><img src="img/IMG_0049.jpg" alt="Logo tiktok" style="max-width: 50px; height: auto;"></a></li>
                 </ul>
             </section>
 
             <section>
                 <h2>Envoyez - nous un message</h2>
-                <form action="#" method="post">
+                <form id="myForm" action="#" method="post">
                     <label for="nom">Nom :</label><br>
-                    <input type="text" id="nom" name="nom" required><br><br>
+                    <input type="text" id="name" placeholder="Votre nom"><br><br>
 
                     <label for="email">E-mail :</label><br>
-                    <input type="email" id="email" name="email" required><br><br>
+                    <input type="email" id="email" placeholder="Votre email"><br><br>
 
                     <label for="message">Message :</label><br>
                     <textarea id="message" name="message" rows="5" required></textarea><br><br>
