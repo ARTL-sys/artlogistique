@@ -43,14 +43,85 @@ img {
   border-radius: var(--radius);
 }
 
-/* Liens par défaut */
-a {
-  text-decoration: none;
+/* ======== BARRE DE NAVIGATION ======== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e293b;
+  padding: 15px 20px;
+  color: #1db954;
+  position: relative;
+  z-index: 1000; /* Toujours au-dessus du menu */
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* ======== LIENS DU MENU ======== */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
   color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
   transition: all var(--transition);
 }
-a:hover {
+
+.nav-links a:hover {
   color: var(--primary-light);
+}
+
+/* ======== BOUTON HAMBURGER ======== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  position: relative;
+  z-index: 1100; /* Doit être au-dessus du menu coulissant */
+}
+
+.menu-toggle .bar {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #1db954;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+.menu-toggle .bar:nth-child(1) { top: 0; }
+.menu-toggle .bar:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.menu-toggle .bar:nth-child(3) { bottom: 0; }
+
+/* ======== ANIMATION CROIX ======== */
+.menu-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg);
+  top: 50%;
+}
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg);
+  bottom: 50%;
+}
+
+/* Images générales */
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--radius);
 }
 
 /* Titres */
@@ -65,6 +136,10 @@ p {
   text-align: justify;
   margin-bottom: 1rem;
   color: var(--text-light);
+}
+
+strong {
+   color: #4ade80;
 }
 
 /* ======================================================
@@ -88,7 +163,7 @@ header img {
 
 /* Titre principal de l’association */
 header h1 {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   margin-bottom: 0.5rem;
 }
 
@@ -110,7 +185,7 @@ nav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem; /* Espacement entre liens */
+  gap: 2rem; /* Espacement entre liens */
 }
 
 nav a {
@@ -311,14 +386,47 @@ footer {
   color: var(--text-muted);
 }
 
-/* ======================================================
-   RESPONSIVE DESIGN
-   Adaptation mobile/tablette
-====================================================== */
+/* ======== MODE RESPONSIVE ======== */
 @media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; /* Afficher le bouton sur mobile */
+  }
+
+  /* Menu caché sur le côté droit par défaut */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh; /* Pleine hauteur de l’écran */
+    width: 250px;
+    background-color: #1e293b;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+    /* Le secret du slide 👇 */
+    transform: translateX(100%); /* Menu complètement hors écran à droite */
+    transition: transform 0.4s ease-in-out; /* Animation fluide */
+  }
+
+  /* Quand on ajoute la classe .show (menu ouvert) */
+  .nav-links.show {
+    transform: translateX(0); /* Fait glisser le menu dans le cadre */
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+  }
   header h1 { font-size: 1.4rem; }
-  nav { flex-direction: column; align-items: center; }
-  nav a { width: 90%; text-align: center; }
   section { padding: 1rem; }
 }
 
+.socials img {
+  width: 40px;
+  margin: 10px;
+  transition: transform 0.3s;
+}
+.socials img:hover {
+  transform: scale(1.2); /* effet zoom au survol */
+}
